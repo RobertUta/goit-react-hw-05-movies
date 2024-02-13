@@ -36,7 +36,7 @@ const MoviesView = () => {
     return () => {
       cancelled = true;
     };
-  }, [query]);
+  }, [query]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const onSubmit = query => setQuery(query);
 
