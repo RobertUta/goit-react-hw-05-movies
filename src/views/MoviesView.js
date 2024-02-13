@@ -20,7 +20,7 @@ const MoviesView = () => {
       return;
     }
     setQuery('');
-  }, [search]);
+  }, [search]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     let cancelled = false;
