@@ -8,7 +8,6 @@ import qs from 'qs';
 import { QueryContext } from '../Components/App';
 
 const MoviesView = () => {
-  // component to render search form and movies list
   const [movies, setMovies] = useState([]); // state to store fetched movies
 
   const { query, setQuery } = useContext(QueryContext); // get query state and setQuery function from context
@@ -16,13 +15,11 @@ const MoviesView = () => {
   const navigate = useNavigate(); // hook to navigate to another route
 
   useEffect(() => {
-    // eslint-disable-line react-hooks/exhaustive-deps
     if (search.includes('query')) {
-      // check if url contains query
-      setQuery(qs.parse(search.replace('?', '')).query); // update query state with query from url
-      return; // stop execution
+      setQuery(qs.parse(search.replace('?', '')).query);
+      return;
     }
-    setQuery(''); // clear query state if url doesn't contain query
+    setQuery('');
   }, [search]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
